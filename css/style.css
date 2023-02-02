@@ -1,6 +1,6 @@
 /* background */
 body {
-    background-color: #7fffd4;
+    background-color: lightblue;
     height: 100vh;
 
 }
@@ -53,8 +53,14 @@ main {
     height: calc(100%/7);
 }
 
-/* funzione active  */
-.square.active {
-    background-color: azure;
+/* class sei salvo  */
+.square.safe {
+    background-color: cyan;
+
+}
+
+/* class hai preso la bomba  */
+.square.explode {
+    background-color: red;
 
 }

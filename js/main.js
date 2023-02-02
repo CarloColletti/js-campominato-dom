@@ -1,6 +1,5 @@
 /** 
 Consegna
-Copiamo la griglia fatta ieri nella nuova repo e aggiungiamo la logica del gioco 
 Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe. 
 Attenzione: nella stessa cella può essere posizionata al massimo una bomba, perciò nell'array delle bombe non potranno esserci due numeri uguali.
 In seguito l'utente clicca su una cella: se il numero è presente nella lista dei numeri generati
@@ -120,19 +119,32 @@ function createGrid(gridElement, dimension) {
         // genero varibile che contiene il numero della i 
         const number = i + 1;
 
+        // li metto a schermo
+        gridElement.append(squareElement);
+
+        // creo la variabile del punteggio 
+        tot = 0;
+
         // aggiungo la funzione per colorare la casella
         squareElement.addEventListener(
             'click',
             function () {
-                this.classList.toggle('active');
-                console.log(number);
-            }
-        )
-        // li metto a schermo
-        gridElement.append(squareElement);
+                // se il numero della casella è lo stesso di una bomba ESPLODI
+                if (bombs.includes(number)) {
+                    this.classList.add('explode');
+                    this.innerHTML = number;
+                    alert(`Il gioco è finito hai totalizzato un punteggio di: ${tot} su ${dimension - bombs.length}`);
+                } else {
+                    // ALTRIMENTI CONTINUI A GIOCARE 
+                    this.classList.add('safe');
+                    this.innerHTML = number;
+                    tot++;
+                }
 
-        // aggiungo il numero a square 
-        squareElement.append(number);
+            }
+
+        )
+
 
     }
 }
