@@ -1,0 +1,60 @@
+/* background */
+body {
+    background-color: #7fffd4;
+    height: 100vh;
+
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* id della griglia */
+#grid {
+    width: 900px;
+    height: 900px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* bordo della griglia  */
+#grid,
+.square {
+    border: 2px solid black;
+}
+
+/* quadrato base  */
+.square {
+    width: calc(100% /10);
+    height: calc(100%/10);
+    cursor: crosshair;
+
+    /* font e align */
+
+    font-size: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* quadrato medio */
+.medium_scuare {
+    width: calc(100%/9);
+    height: calc(100%/9);
+}
+
+/* quadrato grande  */
+.big_scuare {
+    width: calc(100%/7);
+    height: calc(100%/7);
+}
+
+/* funzione active  */
+.square.active {
+    background-color: azure;
+
+}
